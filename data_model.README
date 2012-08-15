@@ -1,0 +1,34 @@
+recipes
+ o id
+ o title
+ o description
+
+steps
+ o id
+ o recipe_id
+ o number
+ o description
+
+ingredients
+ o id
+ o name
+ o description
+ o quantity
+ o scale
+
+alias
+ o ingredients_id
+ o name
+
+quantity
+ o id
+ o scale
+ o amount
+
+ingredients_quantity
+ o ingredients_id
+ o quantity_id
+
+ingredients_recipes
+ o recipe_id
+ o ingredients_id

@@ -13,9 +13,9 @@ steps
 ingredients
  o id
  o name
- o description
- o quantity
- o scale
+ o amount
+ o unit
+ o note
 
 alias
  o ingredients_id

@@ -2,6 +2,7 @@ recipes
  o id
  o title
  o description
+ o source
 
 steps
  o id

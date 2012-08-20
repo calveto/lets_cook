@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+if Rails.env.development?
+  FactoryGirl.create(:recipe,
+                     title: 'Egg Omlet',
+                     description: 'Yummy Omlet',
+                     source: "AllRecipes.com")
+
+  FactoryGirl.create(:ingredient,
+                     name: "Eggs",
+                     amount: "3",
+                     unit: "whole",
+                     note: "Brown Eggs")
+end

@@ -5,7 +5,7 @@ describe "recipes/new" do
     assign(:recipe, stub_model(Recipe,
       title: "MyString",
       description: "MyText",
-      source: "Allrecipes.com"
+      source: "AllRecipes.com"
     ).as_new_record)
   end
 
@@ -16,6 +16,7 @@ describe "recipes/new" do
     assert_select "form", action: recipes_path, method: "post" do
       assert_select "input#recipe_title", name: "recipe[title]"
       assert_select "textarea#recipe_description", name: "recipe[description]"
+      assert_select "input#recipe_source", name: "recipe[source]"
     end
   end
 end

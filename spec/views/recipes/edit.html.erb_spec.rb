@@ -5,7 +5,7 @@ describe "recipes/edit" do
     @recipe = assign(:recipe, stub_model(Recipe,
       title: "MyString",
       description: "MyText",
-      source: "allrecipes.com"
+      source: "AllRecipes.com"
     ))
   end
 
@@ -16,6 +16,7 @@ describe "recipes/edit" do
     assert_select "form", action: recipes_path(@recipe), method: "post" do
       assert_select "input#recipe_title", name: "recipe[title]"
       assert_select "textarea#recipe_description", name: "recipe[description]"
+      assert_select "input#recipe_source", name: "recipe[source]"
     end
   end
 end

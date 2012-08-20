@@ -4,12 +4,14 @@ describe "recipes/index" do
   before(:each) do
     assign(:recipes, [
       stub_model(Recipe,
-        :title => "Title",
-        :description => "MyText"
+        title: "Title",
+        description: "MyText",
+        source: "AllRecipes.com"
       ),
       stub_model(Recipe,
-        :title => "Title",
-        :description => "MyText"
+        title: "Title",
+        description: "MyText",
+        source: "AllRecipes.com"
       )
     ])
   end
@@ -17,7 +19,8 @@ describe "recipes/index" do
   it "renders a list of recipes" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", text: "Title".to_s, count: 2
+    assert_select "tr>td", text: "MyText".to_s, count: 2
+    assert_select "tr>td", text: "AllRecipes.com".to_s, count: 2
   end
 end
